@@ -1,0 +1,42 @@
+{
+  "name": "anadea-task-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack && concurrently \"npm run webpack:w\" \"npm run lite\" ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server",
+    "webpack:w": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EugenLeshchov/anadea-task-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EugenLeshchov/anadea-task-app/issues"
+  },
+  "homepage": "https://github.com/EugenLeshchov/anadea-task-app#readme",
+  "dependencies": {
+    "google-maps-react": "^1.0.19",
+    "materialize-css": "^0.97.8",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-google-maps": "^6.0.1",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "webpack": "^1.14.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "lite-server": "^2.2.2",
+    "concurrently": "^3.1.0"
+  }
+}
