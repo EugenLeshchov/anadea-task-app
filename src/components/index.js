@@ -1,5 +1,7 @@
-import { Map } from './Map/Map'
-import NewTaskButton from './Tasks/Button/Button';
-import Task from './Tasks/Task/Task';
+import { Map } from './Map'
+import { Nav } from './Nav';
+import { Tasks } from './Tasks';
+import { Main } from './Main';
+import { TaskForm } from './TaskForm';
 
-export { Map, Task, NewTaskButton };
+export { Main, Map, Tasks, Nav, TaskForm };

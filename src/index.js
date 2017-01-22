@@ -4,8 +4,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 // components and containers
-import { Tasks, TaskForm, Nav, Main } from './containers';
-import { Map } from './components';
+import { Tasks, TaskForm, Nav, Main, Map } from './components';
 
 // DataBase
 import tasks from './tasksdb';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export class CreateSection extends React.Component {
+export class Product extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -9,7 +9,6 @@ export class CreateSection extends React.Component {
         return (
             <section>
                 <div>NEW TASK</div>
-                <Wish />
             </section>
         );
     }

@@ -22,4 +22,4 @@ class Task extends React.Component {
     }
 }
 
-export default { Task };
+export default Task;
