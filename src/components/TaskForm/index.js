@@ -1,4 +1,5 @@
 import Product from './Product';
-import { TaskForm } from './TaskForm';
+import Description from './Description';
+import TaskForm from './TaskForm';
 
-export {TaskForm, Product};
+export {TaskForm, Product, Description};

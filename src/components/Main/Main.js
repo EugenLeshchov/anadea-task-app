@@ -4,7 +4,8 @@ export function Main(props) {
     const styles = {
         width: '100%',
         height: '94%',
-        position: 'relative'
+        position: 'relative',
+        overflow: 'hidden'
     };
 
     return (

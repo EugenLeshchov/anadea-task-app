@@ -8,6 +8,8 @@ export function Nav(props) {
             height: '6%',
             display: 'flex',
             alignItems: 'center',
+            position: 'relative',
+            zIndex: '3'
         },
         logo: {
             color: '#ef5350',

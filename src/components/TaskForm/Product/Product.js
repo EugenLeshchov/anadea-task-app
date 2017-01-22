@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export class Product extends React.Component {
+class Product extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -13,3 +13,5 @@ export class Product extends React.Component {
         );
     }
 }
+
+export default Product;

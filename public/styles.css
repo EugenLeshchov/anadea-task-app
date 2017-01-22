@@ -1,2 +1,10 @@
+form.closed {
+    width: 10px;
+    background-color: red;
+}
 
-
+form.opened, form.closed {
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    transition: all 1s linear;
+}
