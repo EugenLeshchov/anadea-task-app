@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Task } from '../components';
+import { Task } from '../';
 
-class TaskList extends React.Component {
+class List extends React.Component {
     constructor(props) {
         super(props);
 
@@ -16,4 +16,4 @@ class TaskList extends React.Component {
     }
 }
 
-export default TaskList;
+export default List;

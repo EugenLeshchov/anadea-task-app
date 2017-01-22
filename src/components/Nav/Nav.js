@@ -5,21 +5,22 @@ export function Nav(props) {
     const styles = {
         nav: {
             width: '100%',
-            height: '6%'
+            height: '6%',
+            display: 'flex',
+            alignItems: 'center',
         },
         logo: {
-            left: '1.3em',
             color: '#ef5350',
             fontSize: '1.5em',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            position: 'relative',
+            left: '1.3em'
         }
     };
 
     return (
         <nav style={styles.nav} className="white">
-            <div className="nav-wrapper">
-                <a href="#" className="brand-logo" style={styles.logo}>{props.logo}</a>
-            </div>
+            <div style={styles.logo}>{props.logo}</div>
         </nav>
     );
 }

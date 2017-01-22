@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-import { NewTaskButton } from '../components';
-import TaskList from './TaskList';
+import { List, Button } from './';
 
 export class Tasks extends React.Component {
     constructor(props) {
@@ -20,8 +19,8 @@ export class Tasks extends React.Component {
         return (
             <div className="task-container"
                  style={this.styles}>
-                <NewTaskButton />
-                <TaskList tasks={this.props.tasks} />
+                <Button />
+                <List tasks={this.props.tasks} />
             </div>
         );
     }
