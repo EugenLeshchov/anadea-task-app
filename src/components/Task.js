@@ -4,7 +4,9 @@ class Task extends React.Component {
     constructor(props) {
         super(props);
         this.styles = {
-            width: '100%'
+            width: '100%',
+            marginTop: '.6em',
+            marginBottom: '.6em'
         }
     }
 

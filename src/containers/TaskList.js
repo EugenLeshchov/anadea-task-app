@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Task from '../components/Task';
+import { Task } from '../components';
 
 class TaskList extends React.Component {
     constructor(props) {

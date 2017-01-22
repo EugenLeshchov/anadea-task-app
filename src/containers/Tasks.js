@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import NewTaskButton from '../components/NewTaskButton';
+import { NewTaskButton } from '../components';
 import TaskList from './TaskList';
 
 export class Tasks extends React.Component {
     constructor(props) {
         super(props);
         this.styles = {
-            position: 'relative',
+            position: 'absolute',
             display: 'flex',
             flexDirection: 'column',
             width: '18em',

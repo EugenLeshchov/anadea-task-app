@@ -37,4 +37,4 @@ const mapStateToProps = function(store) {
     };
 };
 
-export default connect(mapStateToProps)(NewTaskButton);
+export default (connect(mapStateToProps)(NewTaskButton));

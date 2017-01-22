@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 
 const initialTaskState = {
-    enabled: false,
+    enabled: true,
     fillForm: false,
 };
 
