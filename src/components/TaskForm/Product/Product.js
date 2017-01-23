@@ -8,18 +8,51 @@ class Product extends React.Component {
     constructor(props) {
         super(props);
         this.styles = {
-            wrapper: {
-                width: '90%'
+            description: {
+                marginBottom: '.5em',
+                fontSize: '1.5em'
+            },
+            location: {
+                marginBottom: '.5em',
+                color: '#bdbdbd'
             }
         }
     }
 
+    getServiceType() {
+        return (this.props.newTaskData.service.serviceType != null
+                ? <span>
+                    <b>{'a ' + this.props.newTaskData.service.serviceType.toLowerCase()}</b>
+                    <span>{' to '}</span>
+                  </span>
+                : <b>{'... '}</b>)
+    }
+
+    getServiceTask() {
+        return (this.props.newTaskData.selectedTask
+                 ? <b>{this.props.newTaskData.selectedTask.toLowerCase()}</b>
+                 : <b>{''}</b>)
+    }
+
+    getTaskDescription() {
+        return (this.props.newTaskData.description
+                 ? <b>{', ' + this.props.newTaskData.description + '.'}</b>
+                 : '')
+    }
+
+
     render() {
         return (
-            <div className="wrapper">
+            <div className="wrapper slide">
                 <Label text={'NEW TASK'} />
-                <div>bla bla bla</div>
-                <CreateButton handleCreateTask={this.props.handleCreateTask}/>
+                <div style={this.styles.description}>
+                    {'I need '}
+                    {this.getServiceType()}
+                    {this.getServiceTask()}
+                    {this.getTaskDescription()}
+                </div>
+                <div style={this.styles.location}>{this.props.newTaskData.location}</div>
+                <CreateButton createTask={this.props.createTask}/>
             </div>
         );
     }

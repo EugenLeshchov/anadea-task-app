@@ -19,7 +19,6 @@
 
 .slide {
     transition: height 1s;
-    height: 0;
 }
 
 .slide-down {

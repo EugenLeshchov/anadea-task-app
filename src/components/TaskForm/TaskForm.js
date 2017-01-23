@@ -30,10 +30,17 @@ export class TaskForm extends React.Component {
         };
     }
 
-    closeForm() {
-        store.dispatch({
-            type: 'FINISH_FILLING_FORM'
-        })
+    createTask() {
+        if (this.props.selectedTask && this.props.location && this.props.description) {
+            store.dispatch({
+                type: 'FINISH_FILLING_FORM'
+
+            })
+        } else {
+            store.dispatch({
+                type: 'INCORRECT_INPUT'
+            })
+        }
     }
 
     handleLocationChange(event) {
@@ -44,7 +51,6 @@ export class TaskForm extends React.Component {
             }
         })
     }
-
 
     handleDescriptionChange(event) {
         store.dispatch({
@@ -70,7 +76,7 @@ export class TaskForm extends React.Component {
 
         return (
             <form className='z-depth-4 ' style={completeStyles}>
-                <Product handleCreateTask={this.closeForm}/>
+                <Product createTask={this.createTask} newTaskData={this.props.newTask} handleCreateTask={this.closeForm}/>
                 <Location handleLocationChange={this.handleLocationChange}/>
                 <Services services={services}
                           selectedServiceType={this.props.service.id}/>
@@ -88,7 +94,8 @@ const mapStateToProps = function(store) {
     return {
         openForm: store.taskState.openForm,
         service: store.taskState.service,
-        selectedTask: store.taskState.selectedTask
+        selectedTask: store.taskState.selectedTask,
+        newTask: store.taskState,
     }
 };
 

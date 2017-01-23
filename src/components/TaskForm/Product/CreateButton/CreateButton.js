@@ -8,7 +8,7 @@ function CreateButton(props) {
     };
 
     return (
-        <a onClick={props.handleCreateTask}
+        <a onClick={props.createTask}
            className="waves-effect waves-light btn"
            style={styles.button}>
             CREATE TASK
