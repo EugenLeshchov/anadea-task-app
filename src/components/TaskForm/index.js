@@ -5,7 +5,8 @@ import { Services } from './Services';
 import Label from './Label';
 import ServiceTasks from './ServiceTasks';
 import Location from './Location';
+import DatePicker from './DatePicker';
 
 import store from '../../store';
 
-export {TaskForm, Location, Product, Description, Services, Label, store, ServiceTasks};
+export {TaskForm, DatePicker, Location, Product, Description, Services, Label, store, ServiceTasks};

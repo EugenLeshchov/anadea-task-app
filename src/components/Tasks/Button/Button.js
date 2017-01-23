@@ -2,7 +2,8 @@ import * as React from 'react';
 
 function Button(props) {
     const styles = {
-        width: '100%'
+        width: '100%',
+        marginBottom: '.3em'
     };
 
     return (

@@ -39,7 +39,6 @@ function Service(props) {
             type: 'SERVICE_TYPE_SELECTED',
             data: {
                 service: props.service,
-                selectedTask: null
             }
         })
     }

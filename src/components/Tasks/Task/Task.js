@@ -4,19 +4,21 @@ class Task extends React.Component {
     constructor(props) {
         super(props);
         this.styles = {
-            width: '100%',
-            marginTop: '.6em',
-            marginBottom: '.6em'
+            date: {
+                fontSize: '1em',
+                color: '#9e9e9e'
+            },
+            description: {
+
+            }
         }
     }
 
     render() {
-        const className = 'task card';
         return (
-            <div className={className}
-                 style={this.styles}>
-                <div>{this.props.data.date}</div>
-                <div>{this.props.data.description}</div>
+            <div className='task card'>
+                <div style={this.styles.date}>{this.props.data.date}</div>
+                <div style={this.styles.description}>{this.props.data.description}</div>
             </div>
         );
     }

@@ -8,13 +8,16 @@ class Product extends React.Component {
     constructor(props) {
         super(props);
         this.styles = {
+            wrapper: {
+                backgroundColor: '#eeeeee'
+            },
             description: {
                 marginBottom: '.5em',
                 fontSize: '1.5em'
             },
             location: {
                 marginBottom: '.5em',
-                color: '#bdbdbd'
+                color: '#424242'
             }
         }
     }
@@ -43,7 +46,7 @@ class Product extends React.Component {
 
     render() {
         return (
-            <div className="wrapper slide">
+            <div style={this.styles.wrapper} className="wrapper slide">
                 <Label text={'NEW TASK'} />
                 <div style={this.styles.description}>
                     {'I need '}

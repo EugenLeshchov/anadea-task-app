@@ -22,7 +22,7 @@ const initialMapState = {
 const taskReducer = function(state = initialTaskState, action) {
     switch(action.type) {
         case 'START_FILLING_FORM':
-            return Object.assign({}, state, { openForm: true });
+            return Object.assign({}, state, initialTaskState, { openForm: true });
         case 'FINISH_FILLING_FORM':
             return Object.assign({}, state, { openForm: false, error: false});
         case 'UPDATE_TASK_DESCRIPTION':
@@ -30,7 +30,7 @@ const taskReducer = function(state = initialTaskState, action) {
         case 'UPDATE_TASK_LOCATION':
             return Object.assign({}, state, { location: action.data.location });
         case 'SERVICE_TYPE_SELECTED':
-            return Object.assign({}, state, { service: action.data.service});
+            return Object.assign({}, state, { service: action.data.service, selectedTask: null});
         case 'SERVICE_TASK_SELECTED':
             return Object.assign({}, state, { selectedTask: action.data.selectedTask });
         case 'INCORRECT_INPUT':

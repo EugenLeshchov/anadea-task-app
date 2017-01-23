@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { Description, Services, ServiceTasks, Product, Location } from './'
+import { Description, Services, ServiceTasks, Product, Location, DatePicker } from './'
 
 import store from '../../store';
 
@@ -28,10 +28,12 @@ export class TaskForm extends React.Component {
             justifyContent: 'flex-start',
             alignItems: 'center'
         };
+
+        this.createTask = this.createTask.bind(this);
     }
 
     createTask() {
-        if (this.props.selectedTask && this.props.location && this.props.description) {
+        if (this.props.selectedTask && this.props.newTask.location && this.props.newTask.description) {
             store.dispatch({
                 type: 'FINISH_FILLING_FORM'
 

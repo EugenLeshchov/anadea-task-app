@@ -36,3 +36,7 @@
 .mark, .unmark:hover {
     box-shadow: 0 0 4px #4C71FE;
 }
+
+.task {
+    padding: 5%;
+}
