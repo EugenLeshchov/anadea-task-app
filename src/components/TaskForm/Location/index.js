@@ -1,3 +1,3 @@
-/**
- * Created by eugen on 1/23/17.
- */
+import Location from './Location'
+
+export default Location;

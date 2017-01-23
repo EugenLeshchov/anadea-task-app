@@ -4,7 +4,8 @@ import TaskForm from './TaskForm';
 import { Services } from './Services';
 import Label from './Label';
 import ServiceTasks from './ServiceTasks';
+import Location from './Location';
 
 import store from '../../store';
 
-export {TaskForm, Product, Description, Services, Label, store, ServiceTasks};
+export {TaskForm, Location, Product, Description, Services, Label, store, ServiceTasks};

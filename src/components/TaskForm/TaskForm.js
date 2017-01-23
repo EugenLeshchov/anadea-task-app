@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { Description, Services, ServiceTasks, Product } from './'
+import { Description, Services, ServiceTasks, Product, Location } from './'
 
 import store from '../../store';
 
@@ -36,6 +36,16 @@ export class TaskForm extends React.Component {
         })
     }
 
+    handleLocationChange(event) {
+        store.dispatch({
+            type: 'UPDATE_TASK_LOCATION',
+            data: {
+                location: event.target.value
+            }
+        })
+    }
+
+
     handleDescriptionChange(event) {
         store.dispatch({
             type: 'UPDATE_TASK_DESCRIPTION',
@@ -61,6 +71,7 @@ export class TaskForm extends React.Component {
         return (
             <form className='z-depth-4 ' style={completeStyles}>
                 <Product handleCreateTask={this.closeForm}/>
+                <Location handleLocationChange={this.handleLocationChange}/>
                 <Services services={services}
                           selectedServiceType={this.props.service.id}/>
                 <ServiceTasks service={this.props.service}
