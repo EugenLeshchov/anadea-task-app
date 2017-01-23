@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { Description, Services, Product } from './'
+import { Description, Services, ServiceTasks, Product } from './'
 
 import store from '../../store';
 
@@ -62,8 +62,10 @@ export class TaskForm extends React.Component {
             <form className='z-depth-4 ' style={completeStyles}>
                 <Product handleCreateTask={this.closeForm}/>
                 <Services services={services}
-                          handleServiceTypeSelection={this.handleServiceTypeSelection}
-                          selectedServiceType={this.props.serviceType}/>
+                          selectedServiceType={this.props.service.id}/>
+                <ServiceTasks service={this.props.service}
+                              selectedServiceTask={this.props.selectedTask}
+                              serviceSelected={(this.props.service.id != null)}/>
                 <Description handleDescriptionChange={this.handleDescriptionChange}/>
             </form>
         );
@@ -74,7 +76,8 @@ export class TaskForm extends React.Component {
 const mapStateToProps = function(store) {
     return {
         openForm: store.taskState.openForm,
-        serviceType: store.taskState.serviceType
+        service: store.taskState.service,
+        selectedTask: store.taskState.selectedTask
     }
 };
 

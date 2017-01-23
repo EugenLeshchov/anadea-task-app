@@ -38,7 +38,8 @@ function Service(props) {
         store.dispatch({
             type: 'SERVICE_TYPE_SELECTED',
             data: {
-                serviceType: props.service.id
+                service: props.service,
+                selectedTask: null
             }
         })
     }
