@@ -1,10 +1,23 @@
-form.closed {
-    width: 10px;
-    background-color: red;
+.selected {
+    box-shadow: 0px 0px 4px #4C71FE;
 }
 
-form.opened, form.closed {
-    -moz-transition: all .2s linear;
-    -webkit-transition: all .2s linear;
-    transition: all 1s linear;
+.unselected {
+    transition: all 1s
+}
+.unselected:hover {
+    box-shadow: 0px 0px 4px #4C71FE;
+}
+
+.circle {
+    display: inline-block;
+    border-radius: 60px;
+}
+
+.wrapper {
+    width: 100%;
+    padding: 3% 5% 3%;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #eeeeee;
 }

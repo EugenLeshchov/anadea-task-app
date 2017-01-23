@@ -5,10 +5,8 @@ function Button(props) {
         width: '100%'
     };
 
-    const className = (props.enabled ? 'enabled ' : 'disabled ') + "waves-effect btn white blue-text text-accent-3";
-
     return (
-        <a className={className}
+        <a className="waves-effect btn white blue-text text-accent-3"
            style={styles}
            onClick={props.onClick}>
            + NEW TASK

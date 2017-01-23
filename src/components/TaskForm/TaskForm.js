@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { Description } from './'
+import { Description, Services, Product } from './'
 
 import store from '../../store';
+
+import services from './services'
+
 
 export class TaskForm extends React.Component {
     constructor(props) {
@@ -11,8 +14,8 @@ export class TaskForm extends React.Component {
 
         this.styles = {
             height: '100%',
-            width: '28em',
-            right: '-28em',
+            width: '30em',
+            right: '-30em',
             top: '0',
             position: 'absolute',
             margin: '0 0 0 0',
@@ -42,13 +45,25 @@ export class TaskForm extends React.Component {
         })
     }
 
+    handleServiceTypeSelection(serviceType) {
+        store.dispatch({
+            type: 'SERVICE_TYPE_SELECTED',
+            data: {
+                serviceType: serviceType
+            }
+        })
+    }
+
     render() {
-        const additionalStyles = (this.props.openForm ? { right: '0'} : { right: '-28em'});
+        const additionalStyles = (this.props.openForm ? { right: '0'} : { right: '-30em'});
         const completeStyles = Object.assign({}, this.styles, additionalStyles);
 
         return (
             <form className='z-depth-4 ' style={completeStyles}>
-                <input onClick={this.closeForm} type="text" />
+                <Product handleCreateTask={this.closeForm}/>
+                <Services services={services}
+                          handleServiceTypeSelection={this.handleServiceTypeSelection}
+                          selectedServiceType={this.props.serviceType}/>
                 <Description handleDescriptionChange={this.handleDescriptionChange}/>
             </form>
         );
@@ -58,7 +73,8 @@ export class TaskForm extends React.Component {
 
 const mapStateToProps = function(store) {
     return {
-        openForm: store.taskState.openForm
+        openForm: store.taskState.openForm,
+        serviceType: store.taskState.serviceType
     }
 };
 

@@ -1,3 +1,3 @@
-/**
- * Created by eugen on 1/22/17.
- */
+import CreateButton from './CreateButton';
+
+export default CreateButton;

@@ -1,3 +1,4 @@
 import Product from './Product'
+import CreateButton from './CreateButton';
 
-export default Product;
+export { Product, CreateButton };

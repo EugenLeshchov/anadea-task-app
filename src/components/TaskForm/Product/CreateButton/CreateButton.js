@@ -1,3 +1,19 @@
-/**
- * Created by eugen on 1/22/17.
- */
+import * as React from 'react'
+
+function CreateButton(props) {
+    const styles = {
+        button: {
+            backgroundColor: '#4C71FE'
+        }
+    };
+
+    return (
+        <a onClick={props.handleCreateTask}
+           className="waves-effect waves-light btn"
+           style={styles.button}>
+            CREATE TASK
+        </a>
+    );
+}
+
+export default CreateButton;

@@ -2,7 +2,8 @@ import { createStore, combineReducers } from 'redux';
 
 const initialTaskState = {
     openForm: false,
-    description: ''
+    description: '',
+    serviceType: null
 };
 
 const initialMapState = {
@@ -17,7 +18,9 @@ const taskReducer = function(state = initialTaskState, action) {
         case 'FINISH_FILLING_FORM':
             return Object.assign({}, state, { openForm: false});
         case 'UPDATE_TASK_DESCRIPTION':
-            return Object.assign({}, state, { description: action.data.description })
+            return Object.assign({}, state, { description: action.data.description });
+        case 'SERVICE_TYPE_SELECTED':
+            return Object.assign({}, state, { serviceType: action.data.serviceType})
     }
     return state;
 };
