@@ -21,7 +21,7 @@ export class TaskForm extends React.Component {
             margin: '0 0 0 0',
             zIndex: '2',
             backgroundColor: 'white',
-            transition: 'all 1s',
+            transition: 'all 1s ease',
 
             display: 'flex',
             flexDirection: 'column',
@@ -72,6 +72,19 @@ export class TaskForm extends React.Component {
         })
     }
 
+    handleDatePick(event) {
+        store.dispatch({
+            type: 'DATE_PICKED',
+        })
+    }
+
+    handleDateUpdate(dateString, { dateMoment, timestamp }){
+    store.dispatch({
+        type: 'DATE_UPDATE',
+        date: timestamp
+    })
+}
+
     render() {
         const additionalStyles = (this.props.openForm ? { right: '0'} : { right: '-30em'});
         const completeStyles = Object.assign({}, this.styles, additionalStyles);
@@ -86,7 +99,9 @@ export class TaskForm extends React.Component {
                               selectedServiceTask={this.props.selectedTask}
                               serviceSelected={(this.props.service.id != null)}/>
                 <Description handleDescriptionChange={this.handleDescriptionChange}/>
-                <Date/>
+                <Date pick={this.props.pickDate}
+                      handleDatePick={this.handleDatePick}
+                      handleDateUpdate={this.handleDateUpdate}/>
             </form>
         );
     }
@@ -99,6 +114,7 @@ const mapStateToProps = function(store) {
         service: store.taskState.service,
         selectedTask: store.taskState.selectedTask,
         newTask: store.taskState,
+        pickDate: store.taskState.pickDate
     }
 };
 
