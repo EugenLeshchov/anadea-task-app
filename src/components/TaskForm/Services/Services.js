@@ -29,7 +29,7 @@ function Services(props) {
                 {props.services.map(function(service) {
                     return <Service key={service.id}
                                     service={service}
-                                    selectedServiceType={props.selectedServiceType}
+                                    selectedServiceId={props.selectedServiceId}
                                     handleServiceTypeSelection={props.handleServiceTypeSelection}/>;
                 })}
             </div>

@@ -6,7 +6,10 @@ function Location(props) {
     return (
         <div className="wrapper">
             <Label text={'LOCATION'}/>
-            <input spellCheck="false" onKeyUp={props.handleLocationChange} type="text" />
+            <input spellCheck="false"
+                   onInput={props.handleLocationChange}
+                   type="text"
+                   value={props.location} />
         </div>
     )
 }

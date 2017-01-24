@@ -5,18 +5,21 @@ const initialTasksState = {
 };
 
 const initialInputState = {
-    openForm: false,
+    location: '',
     description: '',
+    date: new Date(),
+    pickDate: false,
+
     service: {
         id: null,
         serviceType: null,
         imageSource: null,
         tasks: []
     },
-    selectedTask: null,
-    location: null,
+    selectedTask: '',
+
+    openForm: false,
     error: false,
-    pickDate: false,
 };
 
 const initialMapState = {
@@ -46,7 +49,7 @@ const inputReducer = function(state = initialInputState, action) {
 
         // Services selection status
         case 'SERVICE_TYPE_SELECTED':
-            return Object.assign({}, state, { service: action.data.service, selectedTask: null});
+            return Object.assign({}, state, { service: action.data.service, selectedTask: ''});
         case 'SERVICE_TASK_SELECTED':
             return Object.assign({}, state, { selectedTask: action.data.selectedTask });
 
@@ -68,7 +71,7 @@ const mapReducer = function(state = initialMapState, action) {
 
 const tasksReducer = function(state = initialTasksState, action) {
     switch(action.type) {
-        case 'LOCATION_SELECTED':
+        case 'DATE_PICKED':
             return Object.assign({}, state, { locationSelected: true });
     }
     return state;

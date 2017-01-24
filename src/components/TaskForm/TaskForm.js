@@ -12,23 +12,6 @@ export class TaskForm extends React.Component {
     constructor(props) {
         super(props);
 
-        this.styles = {
-            height: '100%',
-            width: '30em',
-            right: '-30em',
-            top: '0',
-            position: 'absolute',
-            margin: '0 0 0 0',
-            zIndex: '2',
-            backgroundColor: 'white',
-            transition: 'all 1s ease',
-
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-start',
-            alignItems: 'center'
-        };
-
         this.createTask = this.createTask.bind(this);
     }
 
@@ -36,7 +19,6 @@ export class TaskForm extends React.Component {
         if (this.props.selectedTask && this.props.newTask.location && this.props.newTask.description) {
             store.dispatch({
                 type: 'FINISH_FILLING_FORM'
-
             })
         } else {
             store.dispatch({
@@ -72,7 +54,7 @@ export class TaskForm extends React.Component {
         })
     }
 
-    handleDatePick(event) {
+    handleDatePick() {
         store.dispatch({
             type: 'DATE_PICKED',
         })
@@ -86,22 +68,41 @@ export class TaskForm extends React.Component {
 }
 
     render() {
-        const additionalStyles = (this.props.openForm ? { right: '0'} : { right: '-30em'});
-        const completeStyles = Object.assign({}, this.styles, additionalStyles);
+        const styles = {
+            inputForm: {
+                height: '100%',
+                width: '30em',
+                right: (this.props.openForm ? '0' : '-30em'),
+                top: '0',
+                position: 'absolute',
+                margin: '0 0 0 0',
+                zIndex: '2',
+                backgroundColor: 'white',
+                transition: 'all 1s ease',
 
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-start',
+                alignItems: 'center'
+            }
+        };
         return (
-            <form className='z-depth-4 ' style={completeStyles}>
-                <Product createTask={this.createTask} newTaskData={this.props.newTask} handleCreateTask={this.closeForm}/>
-                <Location handleLocationChange={this.handleLocationChange}/>
+            <form className='z-depth-4 ' style={styles.inputForm}>
+                <Product createTask={this.createTask}
+                         newTaskData={this.props.newTask} />
+                <Location handleLocationChange={this.handleLocationChange}
+                          location={this.props.location}/>
                 <Services services={services}
-                          selectedServiceType={this.props.service.id}/>
+                          selectedServiceId={this.props.service.id} />
                 <ServiceTasks service={this.props.service}
                               selectedServiceTask={this.props.selectedTask}
-                              serviceSelected={(this.props.service.id != null)}/>
-                <Description handleDescriptionChange={this.handleDescriptionChange}/>
+                              serviceSelected={(this.props.service.id != null)} />
+                <Description handleDescriptionChange={this.handleDescriptionChange}
+                             description={this.props.description}/>
                 <Date pick={this.props.pickDate}
                       handleDatePick={this.handleDatePick}
-                      handleDateUpdate={this.handleDateUpdate}/>
+                      handleDateUpdate={this.handleDateUpdate}
+                      date={this.props.date}/>
             </form>
         );
     }
@@ -110,11 +111,14 @@ export class TaskForm extends React.Component {
 
 const mapStateToProps = function(store) {
     return {
-        openForm: store.taskState.openForm,
-        service: store.taskState.service,
-        selectedTask: store.taskState.selectedTask,
-        newTask: store.taskState,
-        pickDate: store.taskState.pickDate
+        openForm: store.inputState.openForm,
+        service: store.inputState.service,
+        selectedTask: store.inputState.selectedTask,
+        newTask: store.inputState,
+        pickDate: store.inputState.pickDate,
+        location: store.inputState.location,
+        description: store.inputState.description,
+        date: store.inputState.date,
     }
 };
 

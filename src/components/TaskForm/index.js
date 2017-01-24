@@ -5,7 +5,7 @@ import { Services } from './Services';
 import Label from './Label';
 import ServiceTasks from './ServiceTasks';
 import Location from './Location';
-import Date from './DatePicker';
+import Date from './Date';
 
 import store from '../../store';
 

@@ -1,12 +1,9 @@
-.selected {
-    box-shadow: 0px 0px 4px #4C71FE;
+.selected, .unselected:hover, .mark, .unmark:hover {
+    box-shadow: 0px 0px 3px #4C71FE;
 }
 
 .unselected {
-    transition: all 1s
-}
-.unselected:hover {
-    box-shadow: 0px 0px 4px #4C71FE;
+    transition: all .5s
 }
 
 .wrapper {
@@ -34,12 +31,8 @@
     padding: .4em .5em;
     display: inline-block;
     border-radius: 100px;
-    transition: box-shadow 1s;
+    transition: box-shadow .1s;
     margin: .3em;
-}
-
-.mark, .unmark:hover {
-    box-shadow: 0 0 4px #4C71FE;
 }
 
 .task {

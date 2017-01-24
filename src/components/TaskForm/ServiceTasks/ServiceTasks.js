@@ -18,16 +18,18 @@ function ServiceTasks(props) {
     }
 
     const styles = {
-        display: 'flex',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
+        task: {
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap'
+        }
     };
 
     if (props.service.id) {
         return (
             <div className="wrapper">
                 <Label text={props.service.serviceType.toUpperCase() + ' TASKS'}/>
-                <div style={styles}>
+                <div style={styles.task}>
                     {props.service.tasks.map(function (task) {
                         const className = (props.selectedServiceTask == task
                                            ? 'mark'
@@ -36,7 +38,7 @@ function ServiceTasks(props) {
                             <div className={'service-task ' + className}
                                  key={task}
                                  onClick={handleServiceTaskSelection(task)}>
-                                {task}
+                                 {task}
                             </div>
                         );
                     })}

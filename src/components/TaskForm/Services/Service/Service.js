@@ -5,8 +5,8 @@ import { store } from '../..';
 function Service(props) {
     const styles = {
         image: {
-            height: '3.3em',
-            width: '3.3em'
+            height: '3em',
+            width: '3em'
         },
         serviceType: {
             fontSize: '0.75em',
@@ -43,7 +43,7 @@ function Service(props) {
         })
     }
 
-    const className = (props.selectedServiceType == props.service.id ? 'selected' : 'unselected');
+    const className = (props.selectedServiceId == props.service.id ? 'selected' : 'unselected');
 
     return (
         <div style={styles.service}>

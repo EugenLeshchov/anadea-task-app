@@ -7,9 +7,11 @@ export function Description(props) {
         <div className="wrapper">
             <Label text={'TASK DESCRIPTION'} />
             <div className="input-field">
-                <textarea spellCheck="false" id="description"
+                <textarea spellCheck="false"
+                          id="description"
                           className="materialize-textarea"
-                          onKeyUp={props.handleDescriptionChange}>
+                          onInput={props.handleDescriptionChange}
+                          value={props.description}>
                 </textarea>
             </div>
         </div>
