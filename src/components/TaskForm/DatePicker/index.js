@@ -1,3 +1,3 @@
-import DatePicker from './'
+import Date from './DatePicker'
 
-export default DatePicker;
+export default Date;

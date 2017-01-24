@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { Description, Services, ServiceTasks, Product, Location, DatePicker } from './'
+import { Description, Services, ServiceTasks, Product, Location, Date } from './'
 
 import store from '../../store';
 
@@ -86,6 +86,7 @@ export class TaskForm extends React.Component {
                               selectedServiceTask={this.props.selectedTask}
                               serviceSelected={(this.props.service.id != null)}/>
                 <Description handleDescriptionChange={this.handleDescriptionChange}/>
+                <Date/>
             </form>
         );
     }

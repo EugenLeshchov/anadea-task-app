@@ -12,6 +12,7 @@ const initialTaskState = {
     selectedTask: null,
     location: null,
     error: false,
+    pickDate: false,
 };
 
 const initialMapState = {
@@ -21,14 +22,21 @@ const initialMapState = {
 // The User Reducer
 const taskReducer = function(state = initialTaskState, action) {
     switch(action.type) {
+        // Form filling status
         case 'START_FILLING_FORM':
             return Object.assign({}, state, initialTaskState, { openForm: true });
         case 'FINISH_FILLING_FORM':
-            return Object.assign({}, state, { openForm: false, error: false});
+            return Object.assign({}, state, { openForm: false, error: false, pickDate: true});
+        case 'DATE_PICKED':
+            return Object.assign({}, state, {});
+
+        // Updating status
         case 'UPDATE_TASK_DESCRIPTION':
             return Object.assign({}, state, { description: action.data.description });
         case 'UPDATE_TASK_LOCATION':
             return Object.assign({}, state, { location: action.data.location });
+
+        // Services selection status
         case 'SERVICE_TYPE_SELECTED':
             return Object.assign({}, state, { service: action.data.service, selectedTask: null});
         case 'SERVICE_TASK_SELECTED':

@@ -17,12 +17,17 @@
     border-bottom-color: #eeeeee;
 }
 
-.slide {
-    transition: height 1s;
+.slide{
+    transition: max-height 1s;
+    max-height: 0;
 }
 
 .slide-down {
-    height: 100%;
+    max-height: 100px;
+}
+
+.slide-up {
+    max-height: 0;
 }
 
 .service-task {
@@ -39,4 +44,12 @@
 
 .task {
     padding: 5%;
+}
+
+div.date input {
+    border: 0;
+    margin-left: 2em;
+    margin-top: .5em;
+    height: 10%;
+    font-size: 1.2em;
 }

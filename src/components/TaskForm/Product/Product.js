@@ -46,7 +46,7 @@ class Product extends React.Component {
 
     render() {
         return (
-            <div style={this.styles.wrapper} className="wrapper slide">
+            <div style={this.styles.wrapper} className="wrapper">
                 <Label text={'NEW TASK'} />
                 <div style={this.styles.description}>
                     {'I need '}
